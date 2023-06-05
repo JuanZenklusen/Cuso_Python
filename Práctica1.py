@@ -1,5 +1,5 @@
 import math
-"""
+
 #Consiguna 1
 print('Consigna 1:\n')
 
@@ -68,4 +68,3 @@ cantidad_discos = math.ceil((tam_disco*1024)/1.44)
 
 # resultados en pantalla
 print('Se necesitan ', round(cantidad_discos), 'discos de 3.5')
-"""
