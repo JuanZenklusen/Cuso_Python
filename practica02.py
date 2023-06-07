@@ -61,7 +61,6 @@ else:
 
 print('Mide: ', d_mayor)
 
-"""
 
 print('----------------------\n')
 print('Consigna 4:\n')
@@ -88,7 +87,6 @@ else:
 
 print('Mide: ', d_mayor)
 
-"""
 
 print('----------------------\n')
 print('Consigna 4:\n')
