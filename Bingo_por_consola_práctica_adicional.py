@@ -1,7 +1,7 @@
 import random
-s = [1] #Creo la secuencia de numeros empezando por el 1
+s = [1] #Creo una lista con el primer elemento: el 1
 
-#Se completa la secuencia de nros del 1 al 90
+#Se completa la lista de nros del 1 al 90
 while len(s) < 90:
   s.append(int(max(s)+1))
 
