@@ -7,3 +7,10 @@ for i in range(0,nro+1):
     j=j+1
   print('')
   i=i+1
+
+''' Resolución del profe
+n = int(input("Introduce la altura del triángulo (entero positivo): "))
+for i in range(n):
+    for j in range(i+1):
+        print("*", end="")
+    print("")'''
