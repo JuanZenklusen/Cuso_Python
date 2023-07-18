@@ -1,6 +1,0 @@
-Hola, esto es un txt
-
-Ahora lo modifiqué
-
-
-y le agregué esto en una linea 6

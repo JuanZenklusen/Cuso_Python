@@ -6,12 +6,12 @@ bajas.'''
 
 #Leer todas las ventas
 def Leer_ventas():
-    with open('practica_06_Ejercicios_con_ficheros\\ejercicio3.txt',encoding='UTF-8') as archivo:
+    with open('practica06_Ejercicios_con_ficheros\\ejercicio3.txt',encoding='UTF-8') as archivo:
         print(f'Las ventas registradas son: \n\n{archivo.read()}\n')
     
 #Obtener una lista con todas las lineas del archivo
 def Obtener_lista_ventas():
-    with open('practica_06_Ejercicios_con_ficheros\\ejercicio3.txt',encoding='UTF-8') as archivo:
+    with open('practica06_Ejercicios_con_ficheros\\ejercicio3.txt',encoding='UTF-8') as archivo:
         lineas = archivo.readlines() #creo una lista con el contenido de las lineas
         return lineas #retorno la lista
     
@@ -30,7 +30,7 @@ def Agregar_venta(texto,precio_venta):
     lista_actual_vetas = Obtener_lista_ventas()
     nueva_venta = f'\n{texto} ${precio_venta}'
     lista_actual_vetas.append(nueva_venta)
-    with open('practica_06_Ejercicios_con_ficheros\\ejercicio3.txt','w',encoding='UTF-8') as archivo:
+    with open('practica06_Ejercicios_con_ficheros\\ejercicio3.txt','w',encoding='UTF-8') as archivo:
         archivo.writelines(lista_actual_vetas)
     return 'Archivo actualizado', Leer_ventas()
 
