@@ -33,7 +33,7 @@ class CuentaBancaria:
 
 cliente1 = CuentaBancaria('Juan Zenklusen', 15000, 0.15)
 
-'''print(cliente1.VerDatos())
+print(cliente1.VerDatos())
 
 cliente1.DepositarDinero()
 
@@ -41,13 +41,12 @@ print(cliente1.VerDatos())
 
 cliente1.RetirarDinero()
 
-print(cliente1.VerDatos())'''
+print(cliente1.VerDatos())
 
 today = date.today()
 
 new_date = datetime(2023,12,1)
 
 print(f'{today.day}-{today.month}-{today.year}')
-
 
 # Consultar al profe el tema de fechas

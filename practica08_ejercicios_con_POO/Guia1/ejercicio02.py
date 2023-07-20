@@ -14,17 +14,29 @@ class Libro:
 
   #Declaro el método antiguo
   def antiguo(self):
-    if self.a_publicacion < 2000:
-      return f'Publicado antes del 2000'
-    else:
-      return f'Publicado después del 2000'
+    return self.a_publicacion < 2000
 
 #Creo dos objetos para probar
-libro = Libro('Los juegos del Hambre', 'Autorcito', 1990)
-libro2 = Libro('Los juegos del Hambre en llamas', 'Autorcito', 2010)
+libro = Libro('Los juegos del Hambre', 'Suzanne Collins', 2008)
+libro2 = Libro('En llamas', 'Suzanne Collins', 2009)
+libro3 = Libro('Sinsajo', 'Suzanne Collins', 2010)
+libro4 = Libro('Balada de pajaros cantores y serpientes', 'Suzanne Collins', 2020)
 
 #imprimo los métodos
-print(libro.antiguo())
+'''print(libro.antiguo())
 print(libro2.antiguo())
 print(libro.info())
 print(libro2.info())
+
+Aqí hice una modificacion porque el profe lo resolvió distinto a la hora de generar el metodo de 'antiguo' ya que hizo directo el return y no dejo el if.
+
+'''
+
+libros = [libro, libro2, libro3, libro4]
+
+for lib in libros:
+  print(lib.info())
+  if lib.antiguo():
+    print('El libro es antiguo')
+  else:
+    print('El libro es nuevo')

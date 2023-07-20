@@ -9,10 +9,22 @@ c) Cálculo del sueldo neto.
 d) Mostrar el detalle de pago.'''
 
 class Empleado:
-  def __init__(self):
+  def __init__(self, codigo, sueldo_base, monto_hora_extra, horas_extras_trabajadas, estado_civil, cantidad_hijos):
     self.codigo = codigo
     self.sueldo_base = sueldo_base
     self.monto_hora_extra = monto_hora_extra
     self.horas_extras_trabajadas = horas_extras_trabajadas
     self.estado_civil = estado_civil
     self.cantidad_hijos = cantidad_hijos
+
+  def Calcular_sueldo_con_hsextras(self):
+    pass
+
+  def Calcular_retenciones(self):
+    pass
+
+  def Calcular_sueldo_neto(self):
+    pass
+
+  def Mostrar_detalle_pago(self):
+    pass
