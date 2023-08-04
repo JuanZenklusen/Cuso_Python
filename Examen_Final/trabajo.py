@@ -14,7 +14,7 @@ class Apuesta:
 
   def Imprimir_ticket(self):
     return f'''
-    ----- Detalle de la apuesta ----- 
+    --------- Detalle de la apuesta --------- 
         Agencia: {(self.agencia).upper()}
         Tipo de Sorteo: {self.juego}
     
@@ -23,8 +23,8 @@ class Apuesta:
     Fecha:................ {self.fecha}
     Nro. Ticket:.......... {self.nro_tiket}
     Numero/s apostado/s:.. {self.nro}
-    Valor ticket:......... {self.monto_apuesta}
-    ----------------------------------------'''
+    Valor ticket:......... $ {self.monto_apuesta}
+    -----------------------------------------\n\n'''
 
 def Datos_Apostador():
   nombre_completo = input('Ingrese su nombre completo: ')
@@ -52,7 +52,24 @@ def Numero_Monto_Quiniela():
       ciclo_while = False
   monto = float(input(f'\n¿Cuánto dinero quiere apostar al Nº {numero_apostado}? $ '))
   return numero_apostado, monto
-    
+
+
+def Numeros_Quini6():
+  nros_quini6 = []
+  i = 0
+  while i < 6:
+    num = int(input(f'Ingrese {i+1}º número: '))
+    if -1 < num < 36:
+      if num in nros_quini6:
+        print('\n    NUMERO YA INGRESADO   \n')
+      else:
+        nros_quini6.append(num)
+        i += 1
+    else:
+      print('\n    NUMERO INCORRECTO   \n')
+  nros_quini6.sort()
+  return nros_quini6
+
 
 def Jugar_Quiniela():
   datos_apostador = Datos_Apostador()
@@ -66,8 +83,20 @@ def Jugar_Quiniela():
   sleep(3)
   return 
 
+
+def Jugar_Quini6():
+  datos_apostador = Datos_Apostador()
+
+  numeros = Numeros_Quini6()
+
+  apuesta_quini6 = Apuesta(datos_apostador[0], datos_apostador[1], datos_apostador[2], datos_apostador[3], datos_apostador[4], 'Quini 6', numeros, 400)
+  print(apuesta_quini6.Imprimir_ticket())
+  apuestas.append(apuesta_quini6)
+  return
+
 menu = {
   '1': Jugar_Quiniela,
+  '2': Jugar_Quini6
 }
 
 apuestas = []
