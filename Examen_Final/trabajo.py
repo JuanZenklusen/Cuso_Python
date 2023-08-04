@@ -14,16 +14,17 @@ class Apuesta:
 
   def Imprimir_ticket(self):
     return f'''
-    --Detalle de la apuesta-- Agencia: {(self.agencia).upper()}
-    Nombre: {(self.nombre_completo).upper()}
-    DNI: {self.dni}
-    Fecha: {self.fecha}
-    Nro. Ticket: {self.nro_tiket}
-    Corresponde a: {self.juego}
-    Numero/s apostado/s: {self.nro}
-    Valor ticket: {self.monto_apuesta}
+    ----- Detalle de la apuesta ----- 
+        Agencia: {(self.agencia).upper()}
+        Tipo de Sorteo: {self.juego}
+    
+    Nombre:............... {(self.nombre_completo).upper()}
+    DNI:.................. {self.dni}
+    Fecha:................ {self.fecha}
+    Nro. Ticket:.......... {self.nro_tiket}
+    Numero/s apostado/s:.. {self.nro}
+    Valor ticket:......... {self.monto_apuesta}
     ----------------------------------------'''
-
 
 def Datos_Apostador():
   nombre_completo = input('Ingrese su nombre completo: ')
