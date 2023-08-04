@@ -12,6 +12,18 @@ class Apuesta:
     self.nro = nro
     self.monto_apuesta = monto_apuesta
 
+  def Imprimir_ticket(self):
+    return f'''
+    --Detalle de la apuesta-- Agencia: {(self.agencia).upper()}
+    Nombre: {(self.nombre_completo).upper()}
+    DNI: {self.dni}
+    Fecha: {self.fecha}
+    Nro. Ticket: {self.nro_tiket}
+    Corresponde a: {self.juego}
+    Numero/s apostado/s: {self.nro}
+    Valor ticket: {self.monto_apuesta}
+    ----------------------------------------'''
+
 
 def Datos_Apostador():
   nombre_completo = input('Ingrese su nombre completo: ')
@@ -28,16 +40,16 @@ def Numero_Monto_Quiniela():
   while ciclo_while:
     nro = int(input('\nIngrese el nro a apostar desde 10 a 9999: '))
     if nro>9999:
-      print('Ingresó un número mayor s los permitidos.')
+      print('\nIngresó un número mayor s los permitidos.')
       sleep(2)
     elif nro<10:
-      print('Ingresó un número menor a los permitidos.')
+      print('\nIngresó un número menor a los permitidos.')
       sleep(2)
     else:
-      print(f'Ha seleccionado el número {nro} correctamente')
+      print(f'\nHa seleccionado el número {nro} correctamente')
       numero_apostado = nro
       ciclo_while = False
-  monto = float(input(f'¿Cuánto dinero quiere apostar al Nº {numero_apostado}? $ '))
+  monto = float(input(f'\n¿Cuánto dinero quiere apostar al Nº {numero_apostado}? $ '))
   return numero_apostado, monto
     
 
@@ -48,20 +60,10 @@ def Jugar_Quiniela():
 
   apuesta_quiniela = Apuesta(datos_apostador[0], datos_apostador[1], datos_apostador[2], datos_apostador[3], datos_apostador[4], 'Quiniela', nro_y_monto[0], nro_y_monto[1])
 
-  print(f'''
-  Apuesta correctamente ingresada al Nº {apuesta_quiniela.nro} con un monto de $ {apuesta_quiniela.monto_apuesta}. 
-  Datos del jugador:  
-   - Nombre: {apuesta_quiniela.nombre_completo}
-   - DNI: {apuesta_quiniela.dni}
-   - Fecha: {apuesta_quiniela.fecha}
-   - Nro de ticket: {apuesta_quiniela.nro_tiket}
-   - Agencia: {apuesta_quiniela.agencia}
-   - Juego: {apuesta_quiniela.juego}''')
-  
+  print(apuesta_quiniela.Imprimir_ticket())
   apuestas.append(apuesta_quiniela)
-  
   sleep(3)
-
+  return 
 
 menu = {
   '1': Jugar_Quiniela,
@@ -85,3 +87,9 @@ while ciclo:
   else:
       print("Opción inválida.\n")
       sleep(2)
+
+
+
+  # esto de abajo es por si quiero iterar todas las apuestas
+  '''for apuesta in apuestas:
+    print(apuesta.Imprimir())'''
