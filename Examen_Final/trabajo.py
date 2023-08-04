@@ -1,5 +1,6 @@
 from datetime import date
 from time import sleep
+from random import randint
 
 class Apuesta:
   def __init__(self, nombre_completo, dni, fecha, nro_tiket, agencia, juego, nro, monto_apuesta):
@@ -94,31 +95,64 @@ def Jugar_Quini6():
   apuestas.append(apuesta_quini6)
   return
 
+
+
+def Sortear_Quini6():
+  res_quini6 = []
+  while len(res_quini6) < 7: #utilizo un while, porque por ahi el randint le genera dos numeros iguales y quizás sean más de 6 iteraciones
+    num = randint(0, 36)
+    if num in res_quini6:
+      continue
+    else:
+      res_quini6.append(num)
+  res_quini6.sort()
+  return res_quini6
+
+
+def Comprobar_Apuesta():
+  '''resultado_quiniela = randint(10, 9999)'''
+  '''resultado_quini6 = Sortear_Quini6()'''
+  resultado_quiniela = 1234
+  resultado_quini6 = [1, 2, 3, 4, 5, 6]
+  ganador = 0
+  for apuesta in apuestas:
+    if apuesta.nro == resultado_quiniela:
+      print(f'TENEMOS GANADOR -> Ticket Nº: {apuesta.nro_tiket} - {apuesta.nombre_completo}')
+      ganador += 1
+    if apuesta.nro == resultado_quini6:
+      print(f'TENEMOS GANADOR -> Ticket Nº: {apuesta.nro_tiket} - {apuesta.nombre_completo}')
+      ganador += 1
+  if ganador > 0:
+    return print(f'Tenemos {ganador} ganador(es)')
+  else:
+    return print('Ningun Ganador')
+
+
 menu = {
   '1': Jugar_Quiniela,
-  '2': Jugar_Quini6
+  '2': Jugar_Quini6,
+  '3': Comprobar_Apuesta,
 }
 
 apuestas = []
-ciclo = True
 
-while ciclo:
+while True:
   print('menu')
   print('1 - Quiniela')
   print('2 - Quini 6')
-  print('3 - Arqueo')
-  print('4 - Sortear')
+  print('3 - Comprobar apuesta')
+  print('4 - Arqueo')
   print('5 - Salir')
 
   opcion = input("\nSelecciona una opción: ")
-
-  if opcion in menu:
-      menu[opcion]()
+  if opcion == '5':
+    break
   else:
-      print("Opción inválida.\n")
-      sleep(2)
-
-
+    if opcion in menu:
+        menu[opcion]()
+    else:
+        print("Opción inválida.\n")
+        sleep(2)
 
   # esto de abajo es por si quiero iterar todas las apuestas
   '''for apuesta in apuestas:
