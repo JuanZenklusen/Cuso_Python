@@ -40,22 +40,21 @@ def Numeros_Quini6():
     if -1 < num < 36:
       if num in nros_quini6:
         print('\n    NUMERO YA INGRESADO   \n')
+        sleep(2)
       else:
         nros_quini6.append(num)
         i += 1
     else:
       print('\n    NUMERO INCORRECTO   \n')
+      sleep(2)
   nros_quini6.sort()
   return nros_quini6
 
 
 def Jugar_Quiniela():
   datos_apostador = Datos_Apostador()
-
   nro_y_monto = Numero_Monto_Quiniela()
-
   apuesta_quiniela = Apuesta(datos_apostador[0], datos_apostador[1], datos_apostador[2], datos_apostador[3], datos_apostador[4], 'Quiniela', nro_y_monto[0], nro_y_monto[1])
-
   print(apuesta_quiniela.Imprimir_ticket())
   apuestas.append(apuesta_quiniela)
   sleep(3)
@@ -64,12 +63,11 @@ def Jugar_Quiniela():
 
 def Jugar_Quini6():
   datos_apostador = Datos_Apostador()
-
   numeros = Numeros_Quini6()
-
   apuesta_quini6 = Apuesta(datos_apostador[0], datos_apostador[1], datos_apostador[2], datos_apostador[3], datos_apostador[4], 'Quini 6', numeros, 400)
   print(apuesta_quini6.Imprimir_ticket())
   apuestas.append(apuesta_quini6)
+  sleep(3)
   return
 
 
@@ -95,9 +93,11 @@ def Comprobar_Apuesta():
     if apuesta.nro == resultado_quiniela:
       print(f'\nTENEMOS GANADOR -> Ticket Nº: {apuesta.nro_tiket} - {apuesta.nombre_completo}')
       ganador += 1
+      sleep(2)
     if apuesta.nro == resultado_quini6:
       print(f'\nTENEMOS GANADOR -> Ticket Nº: {apuesta.nro_tiket} - {apuesta.nombre_completo}')
       ganador += 1
+      sleep(2)
   if ganador > 0:
     return print(f'\nTenemos {ganador} ganador(es)')
   else:
